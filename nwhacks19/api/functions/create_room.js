@@ -10,7 +10,9 @@ const storage = require("../common/storage");
  */
 module.exports = async name => {
   const room_id = idable(config.room_id_length);
-  const qr_data_url = await qrcode.toDataURL(room_id);
+  const qr_data_url = await qrcode.toDataURL(
+    "https://beat-ballot.netlify.com/Room/" + room_id
+  );
   await storage.add_room(room_id, name, qr_data_url);
   return {
     room_id,
