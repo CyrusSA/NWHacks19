@@ -30,13 +30,12 @@ const storage = {
   clear_all: () => kv.tables.truncate("yeet"),
   // generic update, for internal use only (mainly) because it's unsafe
   update_room: (room_id, value) => kv.set({ key: room_id, value }),
-  add_suggestion: (room_id, name, id) =>
+  add_suggestion: (room_id, suggestion) =>
     storage.map(room_id, c => {
       c.voting_pool.push({
+        ...suggestion,
         upvotes: 1,
-        downvotes: 0,
-        name,
-        id
+        downvotes: 0
       });
       return c;
     }),

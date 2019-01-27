@@ -1,4 +1,4 @@
-const storage = require('../common/storage')
+const storage = require("../common/storage");
 
 /**
  * Vote up or down on a song
@@ -11,13 +11,13 @@ module.exports = async (room_id, song_id, is_upvote) => {
     c.voting_pool.map(song => {
       if (song.id === song_id) {
         if (is_upvote) {
-          song.upvotes++
+          song.upvotes++;
         } else {
-          song.downvotes++
+          song.downvotes++;
         }
       }
-      return song
-    })
-    return c
-  })
+      return song;
+    });
+    return c;
+  });
 };
