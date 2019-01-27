@@ -27,6 +27,7 @@ const storage = {
     }),
   clear_room: room_id => kv.clear({ key: room_id }),
   get_all: () => kv.entries(),
+  clear_all: () => kv.tables.truncate("yeet"),
   // generic update, for internal use only (mainly) because it's unsafe
   update_room: (room_id, value) => kv.set({ key: room_id, value }),
   add_suggestion: (room_id, name, id) =>
