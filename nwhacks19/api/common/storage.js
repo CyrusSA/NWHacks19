@@ -23,7 +23,7 @@ const storage = {
   update_room: (room_id, value) => kv.set({ key: room_id, value }),
   add_suggestion: (room_id, name, id) => storage.map(room_id, c => {
     c.voting_pool.push({
-      upvotes: 0,
+      upvotes: 1,
       downvotes: 0,
       name,
       id,
