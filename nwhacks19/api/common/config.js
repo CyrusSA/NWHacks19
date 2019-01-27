@@ -3,4 +3,5 @@ module.exports = {
   kv_table: "yeet",
   // in millis
   voting_period: 60 * 1000,
+  max_search_results: 10,
 }
