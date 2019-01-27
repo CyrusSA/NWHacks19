@@ -6,6 +6,7 @@ const opts = {
   maxResults: config.max_search_results,
   key: process.env.YT_API_KEY,
 };
+console.log(process.env.YT_API_KEY)
 
 /**
 * A simple "hello world" function

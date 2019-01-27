@@ -1,4 +1,5 @@
 module.exports = {
+  approval_threshold: 0,
   room_id_length: 8,
   kv_table: "yeet",
   // in millis
