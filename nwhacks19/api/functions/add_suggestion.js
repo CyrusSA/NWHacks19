@@ -7,10 +7,10 @@ const lib = require("lib");
  * @param {string} name
  * @param {string} id
  */
-module.exports = async (room_id, name, id) => {
+module.exports = async (room_id, name, id, context) => {
   await storage.add_suggestion(room_id, name, id);
   const room = await storage.get_room(room_id);
   if (room.now_playing === null) {
-    await lib[`nwhacks19.api[@local].play_next`](room_id);
+    await lib[`${context.service.identifier}.play_next`](room_id);
   }
 };
