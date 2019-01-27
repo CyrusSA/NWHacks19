@@ -1,5 +1,5 @@
 const storage = require('../common/storage');
-const roomUtil = require('../common
+const roomUtil = require('../common/room-util');
 
 /**
  * Poll a room to view the playlist, current votes, etc

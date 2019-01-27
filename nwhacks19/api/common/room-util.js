@@ -1,3 +1,5 @@
+const config = require('./config')
+
 const roomUtil = {
   findBestIndex: room =>
     room.voting_pool.findIndex(c => c.upvotes - c.downvotes >= config.approval_threshold),
